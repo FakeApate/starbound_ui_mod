@@ -1,0 +1,177 @@
+[
+  {
+    "op": "replace",
+    "path": "/paneLayout/panefeature/anchor",
+    "value": "CenterBottom"
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar1L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar1LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar1R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar1ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar2L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar2LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar2R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar2ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar3L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar3LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar3R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar3ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar4L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar4LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar4R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar4ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar5L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar5LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar5R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar5ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar6L/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar6LOverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar6R/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/customBar6ROverlay/position/1",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar1/position/0",
+    "value": 143
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar1/position/1",
+    "value": 7
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar2/position/0",
+    "value": 162
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar2/position/1",
+    "value": 7
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar3/position/0",
+    "value": 181
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar3/position/1",
+    "value": 7
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar4/position/0",
+    "value": 200
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/essentialBar4/position/1",
+    "value": 7
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/pickupToActionBar/position/1",
+    "value": 0
+  },
+  {
+    "op": "replace",
+    "path": "/paneLayout/swapCustomBar/position/1",
+    "value": 3
+  }
+]
