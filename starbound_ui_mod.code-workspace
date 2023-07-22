@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.config": "jsonc",
+			"_metadata": "jsonc"
+		}
+	}
+}

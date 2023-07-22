@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>localanimator</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="localanimator">localanimator</h1>
+<p>The <em>localAnimator</em> table provides bindings used by client side animation scripts (e.g. on objects and active items) to set drawables/lights and perform rendering actions.</p>
+<hr>
+<h4 id="void-localanimatorplayaudiostring-sound-int-loops-float-volume"><code>void</code> localAnimator.playAudio(<code>String</code> sound, [<code>int</code> loops], [<code>float</code> volume])</h4>
+<p>Immediately plays the specified sound, optionally with the specified loop count and volume.</p>
+<hr>
+<h4 id="void-localanimatorspawnparticlejson-particleconfig-vec2f-position"><code>void</code> localAnimator.spawnParticle(<code>Json</code> particleConfig, <code>Vec2F</code> position)</h4>
+<p>Immediately spawns a particle with the specified name or configuration at the specified position.</p>
+<hr>
+<h4 id="void-localanimatoradddrawabledrawable-drawable-string-renderlayer"><code>void</code> localAnimator.addDrawable(<code>Drawable</code> drawable, [<code>String</code> renderLayer])</h4>
+<p>Adds the specified drawable to the animator's list of drawables to be rendered. If a render layer is specified, this drawable will be drawn on that layer instead of the parent entity's render layer. Drawables set in this way are retained between script ticks and must be cleared manually using localAnimator.clearDrawables().</p>
+<p>The drawable object must specify exactly one of the following keys to define its type:</p>
+<ul>
+<li>[<code>pair&lt;Vec2F, Vec2F&gt;</code> <strong>line</strong>] - Defines this drawable as a line between the specified two points.</li>
+<li>[<code>List&lt;Vec2F&gt;</code> <strong>poly</strong>] - Defines the drawable as a polygon composed of the specified points.</li>
+<li>[<code>String</code> <strong>image</strong>] - Defines the drawable as an image with the specified asset path.</li>
+</ul>
+<p>The following additional keys may be specified for any drawable type:</p>
+<ul>
+<li>[<code>Vec2F</code> <strong>position</strong>] - Relative position of the drawable.</li>
+<li>[<code>Color</code> <strong>color</strong>] - Color for the drawable. Defaults to white.</li>
+<li>[<code>bool</code> <strong>fullbright</strong>] - Specifies whether the drawable is fullbright (ignores world lighting).</li>
+</ul>
+<p>The following additional key may be specified for line drawables:</p>
+<ul>
+<li>[<code>float</code> <strong>width</strong>] - Specifies the width of the line to be rendered.</li>
+</ul>
+<p>The following transformation options may be specified for image drawables. Note that if a <strong>transformation</strong> is specified, it will be used instead of other specific transformation operations.</p>
+<ul>
+<li>[<code>Mat3F</code> <strong>transformation</strong>]</li>
+<li>[<code>bool</code> <strong>centered</strong>]</li>
+<li>[<code>float</code> <strong>rotation</strong>]</li>
+<li>[<code>bool</code> <strong>mirrored</strong>]</li>
+<li>[<code>float</code> <strong>scale</strong>]</li>
+</ul>
+<hr>
+<h4 id="void-localanimatorcleardrawables"><code>void</code> localAnimator.clearDrawables()</h4>
+<p>Clears the list of drawables to be rendered.</p>
+<hr>
+<h4 id="void-localanimatoraddlightsourcejson-lightsource"><code>void</code> localAnimator.addLightSource(<code>Json</code> lightSource)</h4>
+<p>Adds the specified light source to the animator's list of light sources to be rendered. Light sources set in this way are retained between script ticks and must be cleared manually using localAnimator.clearLightSources(). The configuration object for the light source accepts the following keys:</p>
+<ul>
+<li><code>Vec2F</code> <strong>position</strong></li>
+<li><code>Color</code> <strong>color</strong></li>
+<li>[<code>bool</code> <strong>pointLight</strong>]</li>
+<li>[<code>float</code> <strong>pointBeam</strong>]</li>
+<li>[<code>float</code> <strong>beamAngle</strong>]</li>
+<li>[<code>float</code> <strong>beamAmbience</strong>]</li>
+</ul>
+<hr>
+<h4 id="void-localanimatorclearlightsources"><code>void</code> localAnimator.clearLightSources()</h4>
+<p>Clears the list of light sources to be rendered.</p>
+
+        
+        
+    </body>
+    </html>

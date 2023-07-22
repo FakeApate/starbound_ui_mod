@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>item</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="item">item</h1>
+<p>The <code>item</code> table is available in all scripted items and contains functions relating to the item itself.</p>
+<hr>
+<h4 id="string-itemname"><code>String</code> <a href="http://item.name">item.name</a>()</h4>
+<p>Returns the name of the item.</p>
+<hr>
+<h4 id="size_t-itemcount"><code>size_t</code> item.count()</h4>
+<p>Returns the stack count of the item.</p>
+<hr>
+<h4 id="size_t-itemsetcountsize_t-count"><code>size_t</code> item.setCount(<code>size_t</code> count)</h4>
+<p>Sets the item count. Returns any overflow.</p>
+<hr>
+<h4 id="size_t-itemmaxstack"><code>size_t</code> item.maxStack()</h4>
+<p>Returns the max number of this item that will fit in a stack.</p>
+<hr>
+<h4 id="bool-itemmatchesitemdescriptor-desc-bool-exactmatch"><code>bool</code> item.matches(<code>ItemDescriptor</code> desc, [<code>bool</code> exactMatch])</h4>
+<p>Returns whether the item matches the specified item. If exactMatch is <code>true</code> then both the items' names and parameters are compared, otherwise only the items' names.</p>
+<hr>
+<h4 id="bool-itemconsumesize_t-count"><code>bool</code> item.consume(<code>size_t</code> count)</h4>
+<p>Consumes items from the stack. Returns whether the full count was successfuly consumed.</p>
+<hr>
+<h4 id="bool-itemempty"><code>bool</code> item.empty()</h4>
+<p>Returns whether the item stack is empty.</p>
+<hr>
+<h4 id="itemdescriptor-itemdescriptor"><code>ItemDescriptor</code> item.descriptor()</h4>
+<p>Returns an item descriptor for the item.</p>
+<hr>
+<h4 id="string-itemdescription"><code>String</code> item.description()</h4>
+<p>Returns the description for the item.</p>
+<hr>
+<h4 id="string-itemfriendlyname"><code>String</code> item.friendlyName()</h4>
+<p>Returns the short description for the item.</p>
+<hr>
+<h4 id="int-itemrarity"><code>int</code> item.rarity()</h4>
+<p>Returns the rarity for the item.</p>
+<ul>
+<li>0 = common</li>
+<li>1 = uncommon</li>
+<li>2 = rare</li>
+<li>3 = legendary</li>
+<li>4 = essential</li>
+</ul>
+<hr>
+<h4 id="string-itemraritystring"><code>String</code> item.rarityString()</h4>
+<p>Returns the rarity as a string.</p>
+<hr>
+<h4 id="size_t-itemprice"><code>size_t</code> item.price()</h4>
+<p>Returns the item price.</p>
+<hr>
+<h4 id="unsigned-itemfuelamount"><code>unsigned</code> item.fuelAmount()</h4>
+<p>Returns the item fuel amount.</p>
+<hr>
+<h4 id="json-itemicondrawables"><code>Json</code> item.iconDrawables()</h4>
+<p>Returns a list of the item's icon drawables.</p>
+<hr>
+<h4 id="json-itemdropdrawables"><code>Json</code> item.dropDrawables()</h4>
+<p>Returns a list of the item's itemdrop drawables.</p>
+<hr>
+<h4 id="string-itemlargeimage"><code>String</code> item.largeImage()</h4>
+<p>Returns the item's configured large image, if any.</p>
+<hr>
+<h4 id="string-itemtooltipkind"><code>String</code> item.tooltipKind()</h4>
+<p>Returns the item's tooltip kind.</p>
+<hr>
+<h4 id="string-itemcategory"><code>String</code> item.category()</h4>
+<p>Returns the item's category</p>
+<hr>
+<h4 id="string-itempickupsound"><code>String</code> item.pickupSound()</h4>
+<p>Returns the item's pickup sound.</p>
+<hr>
+<h4 id="bool-itemtwohanded"><code>bool</code> item.twoHanded()</h4>
+<p>Returns whether the item is two handed.</p>
+<hr>
+<h4 id="float-itemtimetolive"><code>float</code> item.timeToLive()</h4>
+<p>Returns the items's time to live.</p>
+<hr>
+<h4 id="json-itemlearnblueprintsonpickup"><code>Json</code> item.learnBlueprintsOnPickup()</h4>
+<p>Returns a list of the blueprints learned on picking up this item.</p>
+<hr>
+<h4 id="bool-itemhasitemtagstring-itemtag"><code>bool</code> item.hasItemTag(<code>String</code> itemTag)</h4>
+<p>Returns whether the set of item tags for this item contains the specified tag.</p>
+<hr>
+<h4 id="json-itempickupquesttemplates"><code>Json</code> item.pickupQuestTemplates()</h4>
+<p>Returns a list of quests acquired on picking up this item.</p>
+
+        
+        
+    </body>
+    </html>

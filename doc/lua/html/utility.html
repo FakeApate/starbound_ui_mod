@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>utility</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="utility">utility</h1>
+<p>The sb table contains miscellaneous utility functions that don't directly relate to any assets or content of the game.</p>
+<hr>
+<h4 id="double-sbnranddouble-standarddeviation-double-mean"><code>double</code> sb.nrand([<code>double</code> standardDeviation], [<code>double</code> mean])</h4>
+<p>Returns a randomized value with a normal distribution using the specified standard deviation (default is 1.0) and mean (default is 0).</p>
+<hr>
+<h4 id="string-sbmakeuuid"><code>String</code> sb.makeUuid()</h4>
+<p>Returns a <code>String</code> representation of a new, randomly-created <code>Uuid</code>.</p>
+<hr>
+<h4 id="void-sbloginfostring-formatstring-luavalue-formatvalues-"><code>void</code> sb.logInfo(<code>String</code> formatString, [<code>LuaValue</code> formatValues ...])</h4>
+<p>Logs the specified formatted string, optionally using the formatted replacement values, to the log file and console with the Info log level.</p>
+<hr>
+<h4 id="void-sblogwarnstring-formatstring-luavalue-formatvalues-"><code>void</code> sb.logWarn(<code>String</code> formatString, [<code>LuaValue</code> formatValues ...])</h4>
+<p>Logs the specified formatted string, optionally using the formatted replacement values, to the log file and console with the Warn log level.</p>
+<hr>
+<h4 id="void-sblogerrorstring-formatstring-luavalue-formatvalues-"><code>void</code> sb.logError(<code>String</code> formatString, [<code>LuaValue</code> formatValues ...])</h4>
+<p>Logs the specified formatted string, optionally using the formatted replacement values, to the log file and console with the Error log level.</p>
+<hr>
+<h4 id="void-sbsetlogmapstring-key-string-formatstring-luavalue-formatvalues-"><code>void</code> sb.setLogMap(<code>String</code> key, <code>String</code> formatString, [<code>LuaValue</code> formatValues ...])</h4>
+<p>Sets an entry in the debug log map (visible while in debug mode) using the specified format string and optional formatted replacement values.</p>
+<hr>
+<h4 id="string-sbprintjsonjson-value-bool-pretty"><code>String</code> sb.printJson(<code>Json</code> value, [<code>bool</code> pretty])</h4>
+<p>Returns a human-readable string representation of the specified JSON value. If pretty is <code>true</code>, objects and arrays will have whitespace added for readability.</p>
+<hr>
+<h4 id="string-sbprintluavalue-value"><code>String</code> sb.print(<code>LuaValue</code> value)</h4>
+<p>Returns a human-readable string representation of the specified <code>LuaValue</code>.</p>
+<hr>
+<h4 id="variantvec2f-double-sbinterpolatesineasedouble-offset-variantvec2f-double-value1-variantvec2f-double-value2"><code>Variant&lt;Vec2F, double&gt;</code> sb.interpolateSinEase(<code>double</code> offset, <code>Variant&lt;Vec2F, double&gt;</code> value1, <code>Variant&lt;Vec2F, double&gt;</code> value2)</h4>
+<p>Returns an interpolated <code>Vec2F</code> or <code>double</code> between the two specified values using a sin ease function.</p>
+<hr>
+<h4 id="string-sbreplacetagsstring-string-mapstring-string-tags"><code>String</code> sb.replaceTags(<code>String</code> string, <code>Map&lt;String, String&gt;</code> tags)</h4>
+<p>Replaces all tags in the specified string with the specified tag replacement values.</p>
+<hr>
+<h4 id="json-sbjsonmergejson-a-json-b"><code>Json</code> sb.jsonMerge(<code>Json</code> a, <code>Json</code> b)</h4>
+<p>Returns the result of merging the contents of b on top of a.</p>
+<hr>
+<h4 id="json-sbjsonqueryjson-content-string-path-json-default"><code>Json</code> sb.jsonQuery(<code>Json</code> content, <code>String</code> path, <code>Json</code> default)</h4>
+<p>Attempts to extract the value in the specified content at the specified path, and returns the found value or the specified default if no such value exists.</p>
+<hr>
+<h4 id="int-sbstaticrandomi32luavalue-hashvalues-"><code>int</code> sb.staticRandomI32([<code>LuaValue</code> hashValues ...])</h4>
+<p>Returns a statically randomized 32-bit signed integer based on the given list of seed values.</p>
+<hr>
+<h4 id="int-sbstaticrandomi32rangeint-min-int-max-luavalue-hashvalues-"><code>int</code> sb.staticRandomI32Range(<code>int</code> min, <code>int</code> max, [<code>LuaValue</code> hashValues ...])</h4>
+<p>Returns a statically randomized 32-bit signed integer within the specified range based on the given list of seed values.</p>
+<hr>
+<h4 id="double-sbstaticrandomdoubleluavalue-hashvalues-"><code>double</code> sb.staticRandomDouble([<code>LuaValue</code> hashValues ...])</h4>
+<p>Returns a statically randomized <code>double</code> based on the given list of seed values.</p>
+<hr>
+<h4 id="double-sbstaticrandomdoublerangedouble-min-double-max-luavalue-hashvalues-"><code>double</code> sb.staticRandomDoubleRange(<code>double</code> min, <code>double</code> max, [<code>LuaValue</code> hashValues ...])</h4>
+<p>Returns a statically randomized <code>double</code> within the specified range based on the given list of seed values.</p>
+<hr>
+<h4 id="randomsource-sbmakerandomsourceunsigned-seed"><code>RandomSource</code> sb.makeRandomSource([<code>unsigned</code> seed])</h4>
+<p>Creates and returns a Lua UserData value which can be used as a random source, initialized with the specified seed. The <code>RandomSource</code> has the following methods:</p>
+<h5 id="void-initunsigned-seed"><code>void</code> init([<code>unsigned</code> seed])</h5>
+<p>Reinitializes the random source, optionally using the specified seed.</p>
+<h5 id="void-addentropyunsigned-seed"><code>void</code> addEntropy([<code>unsigned</code> seed])</h5>
+<p>Adds entropy to the random source, optionally using the specified seed.</p>
+<h5 id="unsigned-randu32"><code>unsigned</code> randu32()</h5>
+<p>Returns a random 32-bit unsigned integer value.</p>
+<h5 id="unsigned-randu64"><code>unsigned</code> randu64()</h5>
+<p>Returns a random 64-bit unsigned integer value.</p>
+<h5 id="int-randi32"><code>int</code> randi32()</h5>
+<p>Returns a random 32-bit signed integer value.</p>
+<h5 id="int-randi64"><code>int</code> randi64()</h5>
+<p>Returns a random 64-bit signed integer value.</p>
+<h5 id="float-randffloat-min-float-max"><code>float</code> randf([<code>float</code> min], [<code>float</code> max])</h5>
+<p>Returns a random <code>float</code> value within the specified range, or between 0 and 1 if no range is specified.</p>
+<h5 id="double-randfdouble-min-double-max"><code>double</code> randf([<code>double</code> min], [<code>double</code> max])</h5>
+<p>Returns a random <code>double</code> value within the specified range, or between 0 and 1 if no range is specified.</p>
+<h5 id="unsigned-randfunsigned-minormax-unsigned-max"><code>unsigned</code> randf(<code>unsigned</code> minOrMax, [<code>unsigned</code> max])</h5>
+<p>Returns a random unsigned integer value between minOrMax and max, or between 0 and minOrMax if no max is specified.</p>
+<h5 id="int-randfint-min-int-max"><code>int</code> randf([<code>int</code> min], [<code>int</code> max])</h5>
+<p>Returns a random signed integer value between minOrMax and max, or between 0 and minOrMax if no max is specified.</p>
+<h5 id="bool-randb"><code>bool</code> randb()</h5>
+<p>Returns a random <code>bool</code> value.</p>
+<hr>
+<h4 id="perlinsource-sbmakeperlinsourcejson-config"><code>PerlinSource</code> sb.makePerlinSource(<code>Json</code> config)</h4>
+<p>Creates and returns a Lua UserData value which can be used as a Perlin noise source. The configuration for the <code>PerlinSource</code> should be a JSON object and can include the following keys:</p>
+<ul>
+<li><code>unsigned</code> <strong>seed</strong> - Seed value used to initialize the source.</li>
+<li><code>String</code> <strong>type</strong> - Type of noise to use. Valid types are &quot;perlin&quot;, &quot;billow&quot; or &quot;ridgedMulti&quot;.</li>
+<li><code>int</code> <strong>octaves</strong> - Number of octaves of noise to use. Defaults to 1.</li>
+<li><code>double</code> <strong>frequency</strong> - Defaults to 1.0.</li>
+<li><code>double</code> <strong>amplitude</strong> - Defaults to 1.0.</li>
+<li><code>double</code> <strong>bias</strong> - Defaults to 0.0.</li>
+<li><code>double</code> <strong>alpha</strong> - Defaults to 2.0.</li>
+<li><code>double</code> <strong>beta</strong> - Defaults to 2.0.</li>
+<li><code>double</code> <strong>offset</strong> - Defaults to 1.0.</li>
+<li><code>double</code> <strong>gain</strong> - Defaults to 2.0.</li>
+</ul>
+<p>The <code>PerlinSource</code> has only one method:</p>
+<h5 id="float-getfloat-x-float-y-float-z"><code>float</code> get(<code>float</code> x, [<code>float</code> y], [<code>float</code> z])</h5>
+<p>Returns a <code>float</code> value from the Perlin source using 1, 2, or 3 dimensions of input.</p>
+
+        
+        
+    </body>
+    </html>

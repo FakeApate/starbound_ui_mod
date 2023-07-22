@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>monster</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="monster">monster</h1>
+<p>The monster table contains bindings specific to monsters which are available in addition to their common tables.</p>
+<hr>
+<h4 id="string-monstertype"><code>String</code> monster.type()</h4>
+<p>Returns the monster's configured monster type.</p>
+<hr>
+<h4 id="string-monsterseed"><code>String</code> monster.seed()</h4>
+<p>Returns a string representation of the monster's random seed.</p>
+<hr>
+<h4 id="json-monsteruniqueparameters"><code>Json</code> monster.uniqueParameters()</h4>
+<p>Returns a table of the monster's unique (override) parameters.</p>
+<hr>
+<h4 id="unsigned-monsterfamilyindex"><code>unsigned</code> monster.familyIndex()</h4>
+<p>Returns the monster's family index.</p>
+<hr>
+<h4 id="float-monsterlevel"><code>float</code> monster.level()</h4>
+<p>Returns the monster's level.</p>
+<hr>
+<h4 id="void-monstersetdamageontouchbool-enabled"><code>void</code> monster.setDamageOnTouch(<code>bool</code> enabled)</h4>
+<p>Enables or disables the monster's touch damage.</p>
+<hr>
+<h4 id="void-monstersetdamagesourceslistdamagesource-damagesources"><code>void</code> monster.setDamageSources([<code>List&lt;DamageSource&gt;</code> damageSources])</h4>
+<p>Sets the monster's active damage sources (or clears them if unspecified).</p>
+<hr>
+<h4 id="void-monstersetdamagepartsstringset-damageparts"><code>void</code> monster.setDamageParts(<code>StringSet</code> damageParts)</h4>
+<p>Sets the monster's active damage parts. Damage parts must be defined in the monster's configuration parameters. A damage part specifies a damage source and an animation part to anchor the damage source to. The anchor part's transformation will be applied to the damage source's damage poly, and if a vector, the damage source's knockback.</p>
+<pre><code class="language-js"><span class="hljs-string">&quot;animationDamageParts&quot;</span> : {
+  <span class="hljs-string">&quot;beam&quot;</span> : {
+    <span class="hljs-string">&quot;anchorPart&quot;</span> : <span class="hljs-string">&quot;partName&quot;</span>, <span class="hljs-comment">// animation part to anchor the damage source to</span>
+    <span class="hljs-string">&quot;checkLineCollision&quot;</span> : <span class="hljs-literal">false</span>, <span class="hljs-comment">// optional, if the damage source is a line, check for collision along the line</span>
+    <span class="hljs-string">&quot;bounces&quot;</span> : <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if the damage source is a line and it checks for collision</span>
+    <span class="hljs-string">&quot;damageSource&quot;</span> : {
+      <span class="hljs-string">&quot;line&quot;</span> : [ [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [<span class="hljs-number">5.0</span>, <span class="hljs-number">0.0</span>] ],
+      <span class="hljs-string">&quot;damage&quot;</span> : <span class="hljs-number">10</span>,
+      <span class="hljs-string">&quot;damageSourceKind&quot;</span> : <span class="hljs-string">&quot;default&quot;</span>,
+      <span class="hljs-string">&quot;teamType&quot;</span> : <span class="hljs-string">&quot;enemy&quot;</span>,
+      <span class="hljs-string">&quot;teamNumber&quot;</span> : <span class="hljs-number">2</span>
+    }
+  }
+}
+</code></pre>
+<pre><code class="language-lua">monster.setDamageParts({<span class="hljs-string">&quot;beam&quot;</span>}) <span class="hljs-comment">-- sets the &quot;beam&quot; damage part active</span>
+</code></pre>
+<hr>
+<h4 id="void-monstersetaggressivebool-aggressive"><code>void</code> monster.setAggressive(<code>bool</code> aggressive)</h4>
+<p>Sets whether the monster is currently aggressive.</p>
+<hr>
+<h4 id="void-monstersetdroppooljson-droppool"><code>void</code> monster.setDropPool(<code>Json</code> dropPool)</h4>
+<p>Sets the monster's drop pool, which determines the items that it will drop on death. This can be specified as the <code>String</code> name of a treasure pool, or as a <code>Map&lt;String, String&gt;</code> to specify different drop pools for different damage types. If specified as a map, the pool should contain a &quot;default&quot; entry for unhandled damage types.</p>
+<hr>
+<h4 id="vec2f-monstertoabsolutepositionvec2f-relativeposition"><code>Vec2F</code> monster.toAbsolutePosition(<code>Vec2F</code> relativePosition)</h4>
+<p>Returns an absolute world position calculated from the given relative position.</p>
+<hr>
+<h4 id="vec2f-monstermouthposition"><code>Vec2F</code> monster.mouthPosition()</h4>
+<p>Returns the world position of the monster's mouth.</p>
+<hr>
+<h4 id="void-monsterflytovec2f-position"><code>void</code> monster.flyTo(<code>Vec2F</code> position)</h4>
+<p>Causes the monster to controlFly toward the given world position.</p>
+<hr>
+<h4 id="void-monstersetdeathparticleburststring-particleemitter"><code>void</code> monster.setDeathParticleBurst([<code>String</code> particleEmitter)</h4>
+<p>Sets the name of the particle emitter (configured in the animation) to burst when the monster dies, or clears it if unspecified.</p>
+<hr>
+<h4 id="void-monstersetdeathsoundstring-sound"><code>void</code> monster.setDeathSound([<code>String</code> sound])</h4>
+<p>Sets the name of the sound (configured in the animation) to play when the monster dies, or clears it if unspecified.</p>
+<hr>
+<h4 id="void-monstersetphysicsforceslistphysicsforceregion-forceregions"><code>void</code> monster.setPhysicsForces(<code>List&lt;PhysicsForceRegion&gt;</code> forceRegions)</h4>
+<p>Sets a list of physics force regions that the monster will project, used for applying forces to other nearby entities. Set an empty list to clear the force regions.</p>
+<hr>
+<h4 id="void-monstersetnamestring-name"><code>void</code> monster.setName(<code>String</code> name)</h4>
+<p>Sets the monster's name.</p>
+<hr>
+<h4 id="void-monstersetdisplaynametagbool-enabled"><code>void</code> monster.setDisplayNametag(<code>bool</code> enabled)</h4>
+<p>Sets whether the monster should display its nametag.</p>
+<hr>
+<h4 id="bool-monstersaystring-line-mapstring-string-tags"><code>bool</code> monster.say(<code>String</code> line, [<code>Map&lt;String, String&gt;</code> tags])</h4>
+<p>Causes the monster to say the line, optionally replacing any specified tags in the text. Returns <code>true</code> if anything is said (i.e. the line is not empty) and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="bool-monstersayportraitstring-line-string-portrait-mapstring-string-tags"><code>bool</code> monster.sayPortrait(<code>String</code> line, <code>String</code> portrait, [<code>Map&lt;String, String&gt;</code> tags])</h4>
+<p>Similar to monster.say, but uses a portrait chat bubble with the specified portrait image.</p>
+<hr>
+<h4 id="void-monstersetdamageteamdamageteam-team"><code>void</code> monster.setDamageTeam(<code>DamageTeam</code> team)</h4>
+<p>Sets the monster's current damage team type and number.</p>
+<hr>
+<h4 id="void-monstersetuniqueidstring-uniqueid"><code>void</code> monster.setUniqueId([<code>String</code> uniqueId])</h4>
+<p>Sets the monster's unique entity id, or clears it if unspecified.</p>
+<hr>
+<h4 id="void-monstersetdamagebarstring-damagebartype"><code>void</code> monster.setDamageBar(<code>String</code> damageBarType)</h4>
+<p>Sets the type of damage bar that the monster should display. Valid options are &quot;default&quot;, &quot;none&quot; and &quot;special&quot;.</p>
+<hr>
+<h4 id="void-monstersetinteractivebool-interactive"><code>void</code> monster.setInteractive(<code>bool</code> interactive)</h4>
+<p>Sets whether the monster is currently interactive.</p>
+<hr>
+<h4 id="void-monstersetanimationparameterstring-key-json-value"><code>void</code> monster.setAnimationParameter(<code>String</code> key, <code>Json</code> value)</h4>
+<p>Sets a networked scripted animator parameter to be used in a client side rendering script using animationConfig.getParameter.</p>
+
+        
+        
+    </body>
+    </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>vehicle</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="vehicle">vehicle</h1>
+<p>The vehicle table contains bindings specific to vehicles which are available in addition to their common tables.</p>
+<hr>
+<h4 id="bool-vehiclecontrolheldstring-loungename-string-controlname"><code>bool</code> vehicle.controlHeld(<code>String</code> loungeName, <code>String</code> controlName)</h4>
+<p>Returns <code>true</code> if the specified control is currently being held by an occupant of the specified lounge position and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="vec2f-vehicleaimpositionstring-loungename"><code>Vec2F</code> vehicle.aimPosition(<code>String</code> loungeName)</h4>
+<p>Returns the world aim position for the specified lounge position.</p>
+<hr>
+<h4 id="entityid-vehicleentitylounginginstring-loungename"><code>EntityId</code> vehicle.entityLoungingIn(<code>String</code> loungeName)</h4>
+<p>Returns the entity id of the entity currently occupying the specified lounge position, or <code>nil</code> if the lounge position is unoccupied.</p>
+<hr>
+<h4 id="void-vehiclesetloungeenabledstring-loungename-bool-enabled"><code>void</code> vehicle.setLoungeEnabled(<code>String</code> loungeName, <code>bool</code> enabled)</h4>
+<p>Enables or disables the specified lounge position.</p>
+<hr>
+<h4 id="void-vehiclesetloungeorientationstring-loungename-string-orientation"><code>void</code> vehicle.setLoungeOrientation(<code>String</code> loungeName, <code>String</code> orientation)</h4>
+<p>Sets the lounge orientation for the specified lounge position. Valid orientations are &quot;sit&quot;, &quot;stand&quot; or &quot;lay&quot;.</p>
+<hr>
+<h4 id="void-vehiclesetloungeemotestring-loungename-string-emote"><code>void</code> vehicle.setLoungeEmote(<code>String</code> loungeName, [<code>String</code> emote])</h4>
+<p>Sets the emote to be performed by entities occupying the specified lounge position, or clears it if no emote is specified.</p>
+<hr>
+<h4 id="void-vehiclesetloungedancestring-loungename-string-dance"><code>void</code> vehicle.setLoungeDance(<code>String</code> loungeName, [<code>String</code> dance])</h4>
+<p>Sets the dance to be performed by entities occupying the specified lounge position, or clears it if no dance is specified.</p>
+<hr>
+<h4 id="void-vehiclesetloungestatuseffectsstring-loungename-jsonarray-statuseffects"><code>void</code> vehicle.setLoungeStatusEffects(<code>String</code> loungeName, <code>JsonArray</code> statusEffects)</h4>
+<p>Sets the list of status effects to be applied to entities occupying the specified lounge position. To clear the effects, set an empty list.</p>
+<hr>
+<h4 id="void-vehiclesetpersistentbool-persistent"><code>void</code> vehicle.setPersistent(<code>bool</code> persistent)</h4>
+<p>Sets whether the vehicle is persistent, i.e. whether it will be stored when the world is unloaded and reloaded.</p>
+<hr>
+<h4 id="void-vehiclesetinteractivebool-interactive"><code>void</code> vehicle.setInteractive(<code>bool</code> interactive)</h4>
+<p>Sets whether the vehicle is currently interactive.</p>
+<hr>
+<h4 id="void-vehiclesetdamageteamdamageteam-team"><code>void</code> vehicle.setDamageTeam(<code>DamageTeam</code> team)</h4>
+<p>Sets the vehicle's current damage team type and number.</p>
+<hr>
+<h4 id="void-vehiclesetmovingcollisionenabledstring-collisionname-bool-enabled"><code>void</code> vehicle.setMovingCollisionEnabled(<code>String</code> collisionName, <code>bool</code> enabled)</h4>
+<p>Enables or disables the specified collision region.</p>
+<hr>
+<h4 id="void-vehiclesetforceregionenabledstring-regionname-bool-enabled"><code>void</code> vehicle.setForceRegionEnabled(<code>String</code> regionName, <code>bool</code> enabled)</h4>
+<p>Enables or disables the specified force region.</p>
+<hr>
+<h4 id="void-vehiclesetdamagesourceenabledstring-damagesourcename-bool-enabled"><code>void</code> vehicle.setDamageSourceEnabled(<code>String</code> damageSourceName, <code>bool</code> enabled)</h4>
+<p>Enables or disables the specified damage source.</p>
+<hr>
+<h4 id="void-vehicledestroy"><code>void</code> vehicle.destroy()</h4>
+<p>Destroys the vehicle.</p>
+
+        
+        
+    </body>
+    </html>

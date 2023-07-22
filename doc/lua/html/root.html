@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>root</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="root">root</h1>
+<p>The <code>root</code> table contains functions that reference the game's currently loaded assets and don't relate to any more specific context such as a particular world or universe.</p>
+<hr>
+<h4 id="json-rootassetjsonstring-assetpath"><code>Json</code> root.assetJson(<code>String</code> assetPath)</h4>
+<p>Returns the contents of the specified JSON asset file.</p>
+<hr>
+<h4 id="json-rootmakecurrentversionedjsonstring-versioningidentifier-json-content"><code>Json</code> root.makeCurrentVersionedJson(<code>String</code> versioningIdentifier, <code>Json</code> content)</h4>
+<p>Returns a versioned JSON representation of the given JSON content with the given identifier and the most recent version as specified in <code>versioning.config</code>.</p>
+<hr>
+<h4 id="json-rootloadversionedjsonjson-versionedcontent-string-versioningidentifier"><code>Json</code> root.loadVersionedJson(<code>Json</code> versionedContent, <code>String</code> versioningIdentifier)</h4>
+<p>Returns the given JSON content and identifier after applying appropriate versioning scripts to bring it up to the most recent version as specified in <code>versioning.config</code>.</p>
+<hr>
+<h4 id="double-rootevalfunctionstring-functionname-double-input"><code>double</code> root.evalFunction(<code>String</code> functionName, <code>double</code> input)</h4>
+<p>Returns the evaluation of the specified univariate function (as defined in a <code>.functions</code> file) for the given input value.</p>
+<hr>
+<h4 id="double-rootevalfunction2string-functionname-double-input1-double-input2"><code>double</code> root.evalFunction2(<code>String</code> functionName, <code>double</code> input1, <code>double</code> input2)</h4>
+<p>Returns the evaluation of the specified bivariate function (as defined in a <code>.2functions</code> file) for the given input values.</p>
+<hr>
+<h4 id="vec2u-rootimagesizestring-imagepath"><code>Vec2U</code> root.imageSize(<code>String</code> imagePath)</h4>
+<p>Returns the pixel dimensions of the specified image asset.</p>
+<hr>
+<h4 id="listvec2i-rootimagespacesstring-imagepath-vec2f-worldposition-float-spacescan-bool-flip"><code>List&lt;Vec2I&gt;</code> root.imageSpaces(<code>String</code> imagePath, <code>Vec2F</code> worldPosition, <code>float</code> spaceScan, <code>bool</code> flip)</h4>
+<p>Returns a list of the world tile spaces the image would occupy if placed at the given position using the specified spaceScan value (the portion of a space that must be non-transparent for that space to count as filled).</p>
+<hr>
+<h4 id="rectu-rootnonemptyregionstring-imagepath"><code>RectU</code> root.nonEmptyRegion(<code>String</code> imagePath)</h4>
+<p>Returns the rectangle containing the portion of the specified asset image that is non-transparent.</p>
+<hr>
+<h4 id="json-rootnpcconfigstring-npctype"><code>Json</code> root.npcConfig(<code>String</code> npcType)</h4>
+<p>Returns a representation of the generated JSON configuration for an NPC of the given type.</p>
+<hr>
+<h4 id="json-rootnpcvariantstring-species-string-npctype-float-level-unsigned-seed-json-parameters"><code>Json</code> root.npcVariant(<code>String</code> species, <code>String</code> npcType, <code>float</code> level, [<code>unsigned</code> seed], [<code>Json</code> parameters])</h4>
+<p>Generates an NPC with the specified species, type, level, seed and parameters, and returns its configuration.</p>
+<hr>
+<h4 id="float-rootprojectilegravitymultiplierstring-projectilename"><code>float</code> root.projectileGravityMultiplier(<code>String</code> projectileName)</h4>
+<p>Returns the gravity multiplier of the given projectile's movement controller configuration as configured in <code>physics.config</code>.</p>
+<hr>
+<h4 id="json-rootprojectileconfigstring-projectilename"><code>Json</code> root.projectileConfig(<code>String</code> projectileName)</h4>
+<p>Returns a representation of the JSON configuration for the given projectile.</p>
+<hr>
+<h4 id="json-rootitemdescriptorsmatchitemdescriptor-descriptor1-itemdescriptor-descriptor2-bool-exactmatch"><code>Json</code> root.itemDescriptorsMatch(<code>ItemDescriptor</code> descriptor1, <code>ItemDescriptor</code> descriptor2, [<code>bool</code> exactMatch])</h4>
+<p>Returns <code>true</code> if the given item descriptors match. If exactMatch is <code>true</code> then both names and parameters will be compared, otherwise only names.</p>
+<hr>
+<h4 id="jsonarray-rootrecipesforitemstring-itemname"><code>JsonArray</code> root.recipesForItem(<code>String</code> itemName)</h4>
+<p>Returns a list of JSON configurations of all recipes which output the given item.</p>
+<hr>
+<h4 id="string-rootitemtypestring-itemname"><code>String</code> root.itemType(<code>String</code> itemName)</h4>
+<p>Returns the item type name for the specified item.</p>
+<hr>
+<h4 id="jsonarray-rootitemtagsstring-itemname"><code>JsonArray</code> root.itemTags(<code>String</code> itemName)</h4>
+<p>Returns a list of the tags applied to the specified item.</p>
+<hr>
+<h4 id="bool-rootitemhastagstring-itemname-string-tagname"><code>bool</code> root.itemHasTag(<code>String</code> itemName, <code>String</code> tagName)</h4>
+<p>Returns true if the given item's tags include the specified tag and false otherwise.</p>
+<hr>
+<h4 id="json-rootitemconfigitemdescriptor-descriptor-float-level-unsigned-seed"><code>Json</code> root.itemConfig(<code>ItemDescriptor</code> descriptor, [<code>float</code> level], [<code>unsigned</code> seed])</h4>
+<p>Generates an item from the specified descriptor, level and seed and returns a JSON object containing the <code>directory</code>, <code>config</code> and <code>parameters</code> for that item.</p>
+<hr>
+<h4 id="itemdescriptor-rootcreateitemitemdescriptor-descriptor-float-level-unsigned-seed"><code>ItemDescriptor</code> root.createItem(<code>ItemDescriptor</code> descriptor, [<code>float</code> level], [<code>unsigned</code> seed])</h4>
+<p>Generates an item from the specified descriptor, level and seed and returns a new item descriptor for the resulting item.</p>
+<hr>
+<h4 id="json-roottenantconfigstring-tenantname"><code>Json</code> root.tenantConfig(<code>String</code> tenantName)</h4>
+<p>Returns the JSON configuration for the given tenant.</p>
+<hr>
+<h4 id="jsonarray-rootgetmatchingtenantsmapstring-unsigned-colonytags"><code>JsonArray</code> root.getMatchingTenants(<code>map&lt;String, unsigned&gt;</code> colonyTags)</h4>
+<p>Returns an array of JSON configurations of tenants matching the given map of colony tags and corresponding object counts.</p>
+<hr>
+<h4 id="jsonarray-rootliquidstatuseffectsliquidid-liquid"><code>JsonArray</code> root.liquidStatusEffects(<code>LiquidId</code> liquid)</h4>
+<p>Returns an array of status effects applied by the given liquid.</p>
+<hr>
+<h4 id="string-rootgeneratenamestring-assetpath-unsigned-seed"><code>String</code> root.generateName(<code>String</code> assetPath, [<code>unsigned</code> seed])</h4>
+<p>Returns a randomly generated name using the specified name gen config and seed.</p>
+<hr>
+<h4 id="json-rootquestconfigstring-questtemplateid"><code>Json</code> root.questConfig(<code>String</code> questTemplateId)</h4>
+<p>Returns the JSON configuration of the specified quest template.</p>
+<hr>
+<h4 id="jsonarray-rootnpcportraitstring-portraitmode-string-species-string-npctype-float-level-unsigned-seed-json-parameters"><code>JsonArray</code> root.npcPortrait(<code>String</code> portraitMode, <code>String</code> species, <code>String</code> npcType, <code>float</code> level, [<code>unsigned</code> seed], [<code>Json</code> parameters])</h4>
+<p>Generates an NPC with the specified type, level, seed and parameters and returns a portrait in the given portraitMode as a list of drawables.</p>
+<hr>
+<h4 id="jsonarray-rootmonsterportraitstring-typename-json-parameters"><code>JsonArray</code> root.monsterPortrait(<code>String</code> typeName, [<code>Json</code> parameters])</h4>
+<p>Generates a monster of the given type with the given parameters and returns its portrait as a list of drawables.</p>
+<hr>
+<h4 id="bool-rootistreasurepoolstring-poolname"><code>bool</code> root.isTreasurePool(<code>String</code> poolName)</h4>
+<p>Returns true if the given treasure pool exists and false otherwise. Can be used to guard against errors attempting to generate invalid treasure.</p>
+<hr>
+<h4 id="jsonarray-rootcreatetreasurestring-poolname-float-level-unsigned-seed"><code>JsonArray</code> root.createTreasure(<code>String</code> poolName, <code>float</code> level, [<code>unsigned</code> seed])</h4>
+<p>Generates an instance of the specified treasure pool, level and seed and returns the contents as a list of item descriptors.</p>
+<hr>
+<h4 id="string-rootmaterialminingsoundstring-materialname-string-modname"><code>String</code> root.materialMiningSound(<code>String</code> materialName, [<code>String</code> modName])</h4>
+<p>Returns the path of the mining sound asset for the given material and mod combination, or <code>nil</code> if no mining sound is set.</p>
+<hr>
+<h4 id="string-rootmaterialfootstepsoundstring-materialname-string-modname"><code>String</code> root.materialFootstepSound(<code>String</code> materialName, [<code>String</code> modName])</h4>
+<p>Returns the path of the footstep sound asset for the given material and mod combination, or <code>nil</code> if no footstep sound is set.</p>
+<hr>
+<h4 id="float-rootmaterialhealthstring-materialname"><code>float</code> root.materialHealth(<code>String</code> materialName)</h4>
+<p>Returns the configured health value for the specified material.</p>
+<hr>
+<h4 id="json-rootmaterialconfigstring-materialname"><code>Json</code> root.materialConfig(<code>String</code> materialName)</h4>
+<p>Returns a JSON object containing the <code>path</code> and base <code>config</code> for the specified material if it is a real material, or <code>nil</code> if it is a metamaterial or invalid.</p>
+<hr>
+<h4 id="json-rootmodconfigstring-modname"><code>Json</code> root.modConfig(<code>String</code> modName)</h4>
+<p>Returns a JSON object containing the <code>path</code> and base <code>config</code> for the specified mod if it is a real mod, or <code>nil</code> if it is a metamod or invalid.</p>
+<hr>
+<h4 id="json-rootliquidconfigliquidid-liquidid"><code>Json</code> root.liquidConfig(<code>LiquidId</code> liquidId)</h4>
+<h4 id="json-rootliquidconfigstring-liquidname"><code>Json</code> root.liquidConfig(<code>String</code> liquidName)</h4>
+<p>Returns a JSON object containing the <code>path</code> and base <code>config</code> for the specified liquid name or id if it is a real liquid, or <code>nil</code> if the liquid is empty or invalid.</p>
+<hr>
+<h4 id="string-rootliquidnameliquidid-liquidid"><code>String</code> root.liquidName(<code>LiquidId</code> liquidId)</h4>
+<p>Returns the string name of the liquid with the given ID.</p>
+<hr>
+<h4 id="liquidid-rootliquididstring-liquidname"><code>LiquidId</code> root.liquidId(<code>String</code> liquidName)</h4>
+<p>Returns the numeric ID of the liquid with the given name.</p>
+<hr>
+<h4 id="json-rootmonsterskillparameterstring-skillname-string-parametername"><code>Json</code> root.monsterSkillParameter(<code>String</code> skillName, <code>String</code> parameterName)</h4>
+<p>Returns the value of the specified parameter for the specified monster skill.</p>
+<hr>
+<h4 id="json-rootmonsterparametersstring-monstertype-uint64_t-seed"><code>Json</code> root.monsterParameters(<code>String</code> monsterType, [uint64_t seed])</h4>
+<p>Returns the parameters for a monster type.</p>
+<hr>
+<h4 id="actormovementparameters-rootmonstermovementsettingsstring-monstertype-uint64_t-seed"><code>ActorMovementParameters</code> root.monsterMovementSettings(<code>String</code> monsterType, [uint64_t seed])</h4>
+<p>Returns the configured base movement parameters for the specified monster type.</p>
+<hr>
+<h4 id="json-rootcreatebiomestring-biomename-unsigned-seed-float-verticalmidpoint-float-threatlevel"><code>Json</code> root.createBiome(<code>String</code> biomeName, <code>unsigned</code> seed, <code>float</code> verticalMidPoint, <code>float</code> threatLevel)</h4>
+<p>Generates a biome with the specified name, seed, vertical midpoint and threat level, and returns a JSON object containing the configuration for the generated biome.</p>
+<hr>
+<h4 id="string-roothastechstring-techname"><code>String</code> root.hasTech(<code>String</code> techName)</h4>
+<p>Returns <code>true</code> if a tech with the specified name exists and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="string-roottechtypestring-techname"><code>String</code> root.techType(<code>String</code> techName)</h4>
+<p>Returns the type (tech slot) of the specified tech.</p>
+<hr>
+<h4 id="json-roottechconfigstring-techname"><code>Json</code> root.techConfig(<code>String</code> techName)</h4>
+<p>Returns the JSON configuration for the specified tech.</p>
+<hr>
+<h4 id="string-roottreestemdirectorystring-stemname"><code>String</code> root.treeStemDirectory(<code>String</code> stemName)</h4>
+<p>Returns the path within assets from which the specified tree stem type was loaded.</p>
+<hr>
+<h4 id="string-roottreefoliagedirectorystring-foliagename"><code>String</code> root.treeFoliageDirectory(<code>String</code> foliageName)</h4>
+<p>Returns the path within assets from which the specified tree foliage type was loaded.</p>
+<hr>
+<h4 id="collection-rootcollectionstring-collectionname"><code>Collection</code> root.collection(<code>String</code> collectionName)</h4>
+<p>Returns the metadata for the specified collection.</p>
+<hr>
+<h4 id="listcollectable-rootcollectablesstring-collectionname"><code>List&lt;Collectable&gt;</code> root.collectables(<code>String</code> collectionName)</h4>
+<p>Returns a list of collectables for the specified collection.</p>
+<hr>
+<h4 id="string-rootelementalresistancestring-elementaltype"><code>String</code> root.elementalResistance(<code>String</code> elementalType)</h4>
+<p>Returns the name of the stat used to calculate elemental resistance for the specified elemental type.</p>
+<hr>
+<h4 id="json-rootdungeonmetadatastring-dungeonname"><code>Json</code> root.dungeonMetadata(<code>String</code> dungeonName)</h4>
+<p>Returns the metadata for the specified dungeon definition.</p>
+<hr>
+<h4 id="behaviorstate-rootbehaviorluatable-context-json-config-jsonobject-parameters"><code>BehaviorState</code> root.behavior(<code>LuaTable</code> context, <code>Json</code> config, <code>JsonObject</code> parameters)</h4>
+<p>Loads a behavior and returns the behavior state as userdata.</p>
+<p>context is the current lua context called from, in almost all cases _ENV.</p>
+<p>config can be either the <code>String</code> name of a behavior tree, or an entire behavior tree configuration to be built.</p>
+<p>parameters is overrides for parameters for the behavior tree.</p>
+<p>BehaviorState contains 2 methods:</p>
+<p>behavior:init(_ENV) -- initializes the behavior, loads required scripts, and returns a new behavior state
+behavior:run(state, dt) -- runs the behavior, takes a behavior state for the first argument
+behavior:clear(state) -- resets the internal state of the behavior</p>
+<p>Example:</p>
+<pre><code class="language-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>
+  <span class="hljs-built_in">self</span>.behavior = root.behavior(<span class="hljs-string">&quot;monster&quot;</span>, {})
+  <span class="hljs-built_in">self</span>.behaviorState = <span class="hljs-built_in">self</span>.behavior:init(<span class="hljs-built_in">_ENV</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(dt)</span></span>
+  <span class="hljs-built_in">self</span>.behavior:run(<span class="hljs-built_in">self</span>.behaviorState, dt)
+<span class="hljs-keyword">end</span>
+</code></pre>
+
+        
+        
+    </body>
+    </html>

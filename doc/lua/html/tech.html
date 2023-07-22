@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>tech</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="tech">tech</h1>
+<p>The <code>tech</code> table contains functions exclusively available in tech scripts.</p>
+<hr>
+<h4 id="vec2f-techaimposition"><code>Vec2F</code> tech.aimPosition()</h4>
+<p>Returns the current cursor aim position.</p>
+<hr>
+<h4 id="void-techsetvisiblebool-visible"><code>void</code> tech.setVisible(<code>bool</code> visible)</h4>
+<p>Sets whether the tech should be visible.</p>
+<hr>
+<h4 id="void-techsetparentstatestring-state"><code>void</code> tech.setParentState(<code>String</code> state)</h4>
+<p>Set the animation state of the player.</p>
+<p>Valid states:</p>
+<ul>
+<li>&quot;Stand&quot;</li>
+<li>&quot;Fly&quot;</li>
+<li>&quot;Fall&quot;</li>
+<li>&quot;Sit&quot;</li>
+<li>&quot;Lay&quot;</li>
+<li>&quot;Duck&quot;</li>
+<li>&quot;Walk&quot;</li>
+<li>&quot;Run&quot;</li>
+<li>&quot;Swim&quot;</li>
+</ul>
+<hr>
+<h4 id="void-techsetparentdirectivesstring-directives"><code>void</code> tech.setParentDirectives(<code>String</code> directives)</h4>
+<p>Sets the image processing directives for the player.</p>
+<hr>
+<h4 id="void-techsetparenthiddenbool-hidden"><code>void</code> tech.setParentHidden(<code>bool</code> hidden)</h4>
+<p>Sets whether to make the player invisible. Will still show the tech.</p>
+<hr>
+<h4 id="void-techsetparentoffsetvec2f-offset"><code>void</code> tech.setParentOffset(<code>Vec2F</code> offset)</h4>
+<p>Sets the position of the player relative to the tech.</p>
+<hr>
+<h4 id="bool-techparentlounging"><code>bool</code> tech.parentLounging()</h4>
+<p>Returns whether the player is lounging.</p>
+<hr>
+<h4 id="void-techsettoolusagesuppressedbool-suppressed"><code>void</code> tech.setToolUsageSuppressed(<code>bool</code> suppressed)</h4>
+<p>Sets whether to suppress tool usage on the player. When tool usage is suppressed no items can be used.</p>
+
+        
+        
+    </body>
+    </html>

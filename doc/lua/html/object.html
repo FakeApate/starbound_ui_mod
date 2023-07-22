@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>object</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="object">object</h1>
+<p>The object table contains bindings specific to objects which are available in addition to their common tables.</p>
+<hr>
+<h4 id="string-objectname"><code>String</code> <a href="http://object.name">object.name</a>()</h4>
+<p>Returns the object's type name.</p>
+<hr>
+<h4 id="int-objectdirection"><code>int</code> object.direction()</h4>
+<p>Returns the object's facing direction. This will be 1 for right or -1 for left.</p>
+<hr>
+<h4 id="vec2f-objectposition"><code>Vec2F</code> object.position()</h4>
+<p>Returns the object's tile position. This is identical to entity.position(), so use that instead.</p>
+<hr>
+<h4 id="void-objectsetinteractivebool-interactive"><code>void</code> object.setInteractive(<code>bool</code> interactive)</h4>
+<p>Sets whether the object is currently interactive.</p>
+<hr>
+<h4 id="string-objectuniqueid"><code>String</code> object.uniqueId()</h4>
+<p>Returns the object's unique entity id, or <code>nil</code> if no unique id is set. This should be identical to entity.uniqueId(), so use that instead.</p>
+<hr>
+<h4 id="void-objectsetuniqueidstring-uniqueid"><code>void</code> object.setUniqueId([<code>String</code> uniqueId])</h4>
+<p>Sets the objects unique entity id, or clears it if unspecified.</p>
+<hr>
+<h4 id="rectf-objectboundbox"><code>RectF</code> object.boundBox()</h4>
+<p>Returns the object's metaBoundBox in world space.</p>
+<hr>
+<h4 id="listvec2i-objectspaces"><code>List&lt;Vec2I&gt;</code> object.spaces()</h4>
+<p>Returns a list of the tile spaces that the object occupies.</p>
+<hr>
+<h4 id="void-objectsetprocessingdirectivesstring-directives"><code>void</code> object.setProcessingDirectives(<code>String</code> directives)</h4>
+<p>Sets the image processing directives that should be applied to the object's animation.</p>
+<hr>
+<h4 id="void-objectsetsoundeffectenabledbool-enabled"><code>void</code> object.setSoundEffectEnabled(<code>bool</code> enabled)</h4>
+<p>Enables or disables the object's persistent sound effect, if one is configured.</p>
+<hr>
+<h4 id="void-objectsmashbool-smash"><code>void</code> object.smash([<code>bool</code> smash])</h4>
+<p>Breaks the object. If smash is <code>true</code> then it will be smashed, causing it to (by default) drop no items.</p>
+<hr>
+<h4 id="float-objectlevel"><code>float</code> object.level()</h4>
+<p>Returns the &quot;level&quot; parameter if set, otherwise returns the current world's threat level.</p>
+<hr>
+<h4 id="vec2f-objecttoabsolutepositionvec2f-relativeposition"><code>Vec2F</code> object.toAbsolutePosition(<code>Vec2F</code> relativePosition)</h4>
+<p>Returns an absolute world position calculated from the given relative position.</p>
+<hr>
+<h4 id="bool-objectsaystring-line-mapstring-string-tags-json-config"><code>bool</code> object.say(<code>String</code> line, [<code>Map&lt;String, String&gt;</code> tags], [<code>Json</code> config])</h4>
+<p>Causes the object to say the line, optionally replacing any specified tags in the text, and using the provided additional chat configuration. Returns <code>true</code> if anything is said (i.e. the line is not empty) and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="bool-objectsayportraitstring-line-string-portrait-mapstring-string-tags-json-config"><code>bool</code> object.sayPortrait(<code>String</code> line, <code>String</code> portrait, [<code>Map&lt;String, String&gt;</code> tags], [<code>Json</code> config])</h4>
+<p>Similar to object.say, but uses a portrait chat bubble with the specified portrait image.</p>
+<hr>
+<h4 id="bool-objectistouchingentityid-entityid"><code>bool</code> object.isTouching(<code>EntityId</code> entityId)</h4>
+<p>Returns <code>true</code> if the specified entity's collision area overlaps the object's bound box and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="void-objectsetlightcolorcolor-color"><code>void</code> object.setLightColor(<code>Color</code> color)</h4>
+<p>Sets the color of light for the object to emit. This is not the same as animator.setLightColor and the animator light configuration should be used for more featureful light sources.</p>
+<hr>
+<h4 id="color-objectgetlightcolor"><code>Color</code> object.getLightColor()</h4>
+<p>Returns the object's currently configured light color.</p>
+<hr>
+<h4 id="unsigned-objectinputnodecount"><code>unsigned</code> object.inputNodeCount()</h4>
+<p>Returns the number of wire input nodes the object has.</p>
+<hr>
+<h4 id="unsigned-objectoutputnodecount"><code>unsigned</code> object.outputNodeCount()</h4>
+<p>Returns the number of wire output nodes the object has.</p>
+<hr>
+<h4 id="vec2i-objectgetinputnodepositionunsigned-nodeindex"><code>Vec2I</code> object.getInputNodePosition(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns the relative position of the specified wire input node.</p>
+<hr>
+<h4 id="vec2i-objectgetoutputnodepositionunsigned-nodeindex"><code>Vec2I</code> object.getOutputNodePosition(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns the relative position of the specified wire output node.</p>
+<hr>
+<h4 id="bool-objectgetinputnodelevelunsigned-nodeindex"><code>bool</code> object.getInputNodeLevel(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns the current level of the specified wire input node.</p>
+<hr>
+<h4 id="bool-objectgetoutputnodelevelunsigned-nodeindex"><code>bool</code> object.getOutputNodeLevel(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns the current level of the specified wire output node.</p>
+<hr>
+<h4 id="bool-objectisinputnodeconnectedunsigned-nodeindex"><code>bool</code> object.isInputNodeConnected(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns <code>true</code> if any wires are currently connected to the specified wire input node and <code>false</code> otherwise.</p>
+<hr>
+<h4 id="bool-objectisoutputnodeconnectedunsigned-nodeindex"><code>bool</code> object.isOutputNodeConnected(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns <code>true</code> if any wires are currently connected to the specified wire output node and <code>false</code> otherwise</p>
+<hr>
+<h4 id="mapentityid-unsigned-objectgetinputnodeidsunsigned-nodeindex"><code>Map&lt;EntityId, unsigned&gt;</code> object.getInputNodeIds(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns a map of the entity id of each wire entity connected to the given wire input node and the index of that entity's output node to which the input node is connected.</p>
+<hr>
+<h4 id="mapentityid-unsigned-objectgetoutputnodeidsunsigned-nodeindex"><code>Map&lt;EntityId, unsigned&gt;</code> object.getOutputNodeIds(<code>unsigned</code> nodeIndex)</h4>
+<p>Returns a map of the entity id of each wire entity connected to the given wire output node and the index of that entity's input node to which the output node is connected.</p>
+<hr>
+<h4 id="void-objectsetoutputnodelevelunsigned-nodeindex-bool-level"><code>void</code> object.setOutputNodeLevel(<code>unsigned</code> nodeIndex, <code>bool</code> level)</h4>
+<p>Sets the level of the specified wire output node.</p>
+<hr>
+<h4 id="void-objectsetalloutputnodesbool-level"><code>void</code> object.setAllOutputNodes(<code>bool</code> level)</h4>
+<p>Sets the level of all wire output nodes.</p>
+<hr>
+<h4 id="void-objectsetofferedquestsjsonarray-quests"><code>void</code> object.setOfferedQuests([<code>JsonArray</code> quests])</h4>
+<p>Sets the list of quests that the object will offer to start, or clears them if unspecified.</p>
+<hr>
+<h4 id="void-objectsetturninquestsjsonarray-quests"><code>void</code> object.setTurnInQuests([<code>JsonArray</code> quests])</h4>
+<p>Sets the list of quests that the object will accept turn-in for, or clears them if unspecified.</p>
+<hr>
+<h4 id="void-objectsetconfigparameterstring-key-json-value"><code>void</code> object.setConfigParameter(<code>String</code> key, <code>Json</code> value)</h4>
+<p>Sets the specified override configuration parameter for the object.</p>
+<hr>
+<h4 id="void-objectsetanimationparameterstring-key-json-value"><code>void</code> object.setAnimationParameter(<code>String</code> key, <code>Json</code> value)</h4>
+<p>Sets the specified animation parameter for the object's scripted animator.</p>
+<hr>
+<h4 id="void-objectsetmaterialspacesjsonarray-spaces"><code>void</code> object.setMaterialSpaces([<code>JsonArray</code> spaces])</h4>
+<p>Sets the object's material spaces to the specified list, or clears them if unspecified. List entries should be in the form of <code>pair&lt;Vec2I, String&gt;</code> specifying the relative position and material name of materials to be set. <strong>Objects should only set material spaces within their occupied tile spaces to prevent Bad Things TM from happening.</strong></p>
+<hr>
+<h4 id="void-objectsetdamagesourceslistdamagesource-damagesources"><code>void</code> object.setDamageSources([<code>List&lt;DamageSource&gt;</code> damageSources])</h4>
+<p>Sets the object's active damage sources (or clears them if unspecified).</p>
+<hr>
+<h4 id="float-objecthealth"><code>float</code> object.health()</h4>
+<p>Returns the object's current health.</p>
+<hr>
+<h4 id="void-objectsethealthfloat-health"><code>void</code> object.setHealth(<code>float</code> health)</h4>
+<p>Sets the object's current health.</p>
+
+        
+        
+    </body>
+    </html>
