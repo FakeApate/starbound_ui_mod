@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/message/textContainerOffset/1",
+    "value": 28
+  }
+]
