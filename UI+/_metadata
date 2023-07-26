@@ -1,10 +1,10 @@
 {
-  "version" : "1.0.0",
-  "author" : "Samuel Imboden",
-  "tags" : "User Interface",
-  "description" : "Features:\n - ActionBar on the bottom of the screen, as it always should have been.\n\nI want to do more but all other enhancments i have in mind require me to writing patches for the executable.\nFor example: Sorting chests.",
-  "name" : "UI+",
-  "friendlyName" : "UI Enhancement",
-  "steamContentId" : "3008116624",
-  "link" : "steam://url/CommunityFilePage/3008116624"
+  "author": "Samuel Imboden",
+  "description": "Features:\n - ActionBar on the bottom of the screen, as it always should have been.\n - Messages will appear over the ActionBar\n - *Sorting Storages*",
+  "friendlyName": "UI Enhancement",
+  "link": "steam://url/CommunityFilePage/3008116624",
+  "name": "UI+",
+  "steamContentId": "3008116624",
+  "tags": "User Interface",
+  "version": "1.2.0"
 }
