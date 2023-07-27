@@ -1,10 +1,10 @@
 {
-  "author": "Samuel Imboden",
-  "description": "Features:\n - ActionBar on the bottom of the screen, as it always should have been.\n - Messages will appear over the ActionBar\n - *Sorting Storages*",
-  "friendlyName": "UI Enhancement",
-  "link": "steam://url/CommunityFilePage/3008116624",
-  "name": "UI+",
-  "steamContentId": "3008116624",
-  "tags": "User Interface",
-  "version": "1.2.0"
+  "author" : "Samuel Imboden",
+  "description" : "Features:\n - ActionBar on the bottom of the screen, as it always should have been.\n - Messages will appear over the ActionBar\n\nFuture Features:\n - Sorting Storages",
+  "friendlyName" : "UI Enhancement",
+  "link" : "steam://url/CommunityFilePage/3008116624",
+  "name" : "UI+",
+  "steamContentId" : "3008116624",
+  "tags" : "User Interface",
+  "version" : "1.3.0"
 }
